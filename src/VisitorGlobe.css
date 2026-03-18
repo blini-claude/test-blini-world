@@ -1,0 +1,57 @@
+.globe-section {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.globe-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #94a3b8;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.globe-wrap {
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  background: radial-gradient(ellipse at center, #0f172a 0%, #020617 100%);
+  box-shadow:
+    0 0 60px rgba(59, 130, 246, 0.15),
+    0 0 120px rgba(59, 130, 246, 0.08);
+}
+
+.globe-legend {
+  display: flex;
+  gap: 20px;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.dot.red  { background: #ff4444; box-shadow: 0 0 6px #ff4444; }
+.dot.blue { background: #60a5fa; box-shadow: 0 0 6px #60a5fa; }
+
+.globe-you {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.globe-you strong {
+  color: #ff4444;
+}

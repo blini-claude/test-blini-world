@@ -1,5 +1,7 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, lazy, Suspense } from 'react'
 import './App.css'
+
+const VisitorGlobe = lazy(() => import('./VisitorGlobe'))
 
 function App() {
   const [word, setWord] = useState('World')
@@ -8,7 +10,6 @@ function App() {
   const recognitionRef = useRef(null)
 
   const handleInput = (e) => {
-    // Only allow a single word (no spaces)
     const val = e.target.value.replace(/\s/g, '')
     setInputVal(val)
     if (val) setWord(val)
@@ -50,7 +51,7 @@ function App() {
   }
 
   return (
-    <div className="container">
+    <div className="page">
       <div className="card">
         <h1>
           Hello <span className="gradient-word">{word}</span>!
@@ -74,6 +75,10 @@ function App() {
         </div>
 
         {listening && <p className="hint">Listening… say one word</p>}
+
+        <Suspense fallback={<p style={{color:'#94a3b8',marginTop:'32px'}}>Loading globe…</p>}>
+          <VisitorGlobe />
+        </Suspense>
       </div>
     </div>
   )

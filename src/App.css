@@ -1,17 +1,20 @@
-.container {
+.page {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   min-height: 100vh;
   background: #f0f2f5;
+  padding: 48px 20px;
 }
 
 .card {
   background: white;
   padding: 60px 80px;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
   text-align: center;
+  width: 100%;
+  max-width: 600px;
 }
 
 .card h1 {
