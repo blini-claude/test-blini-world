@@ -16,12 +16,75 @@
 
 .card h1 {
   font-size: 3rem;
-  margin: 0 0 10px;
+  margin: 0 0 32px;
   color: #333;
 }
 
-.card p {
-  font-size: 1.2rem;
-  color: #666;
-  margin: 0;
+/* Animated red-blue gradient word */
+.gradient-word {
+  background: linear-gradient(90deg, #ff2020, #6a00ff, #ff2020);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientFlow 2.5s linear infinite;
+  display: inline-block;
+}
+
+@keyframes gradientFlow {
+  0%   { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Controls row */
+.controls {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.word-input {
+  padding: 10px 16px;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  width: 180px;
+  transition: border-color 0.2s;
+}
+
+.word-input:focus {
+  border-color: #6a00ff;
+}
+
+.mic-btn {
+  padding: 10px 14px;
+  font-size: 1.3rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.mic-btn:hover {
+  border-color: #6a00ff;
+}
+
+.mic-btn.active {
+  border-color: #ff2020;
+  box-shadow: 0 0 0 3px rgba(255, 32, 32, 0.2);
+  animation: pulse 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(255, 32, 32, 0.2); }
+  50%       { box-shadow: 0 0 0 6px rgba(255, 32, 32, 0.1); }
+}
+
+.hint {
+  margin: 16px 0 0;
+  color: #ff2020;
+  font-size: 0.9rem;
 }
